@@ -8,3 +8,7 @@ export const getFilms = async (token) => {
 export const getPeople = async (token) => {
   return axios.get(BACKEND_URL + `/people`, { headers: { Authorization: `${token}`}});
 };
+
+export const getPlanets = async (token) => {
+  return axios.get(BACKEND_URL + `/planets`, { headers: { Authorization: `${token}`}});
+};

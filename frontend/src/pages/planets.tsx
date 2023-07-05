@@ -1,11 +1,11 @@
 import { useProtectRoute } from '../utils/auth/useProtectRoute';
-import { useFilms } from '@/hooks';
 import { Card, CardActionArea, CardContent, Typography } from '@mui/material';
 import { MainDiv } from '@/components/styled';
+import { usePlanets } from '@/hooks';
 
-export default function Films() {
+export default function Planets() {
   useProtectRoute();
-  const {isLoading, data } = useFilms()
+  const {isLoading, data } = usePlanets()
 
   if (isLoading) return <div>Loading...</div>
 
@@ -16,13 +16,16 @@ export default function Films() {
                 <CardActionArea>
                 <CardContent>
                     <Typography gutterBottom variant="h6" component="div">
-                        {m.title}
+                        {m.name}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        Director: {m.director}
+                        climate: {m.climate}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        Producer: {m.producer}
+                        diameter: {m.diameter}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        population: {m.population}
                     </Typography>
                 </CardContent>
                 </CardActionArea>
@@ -31,3 +34,4 @@ export default function Films() {
     </MainDiv>
   );
 }
+

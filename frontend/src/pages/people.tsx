@@ -1,9 +1,9 @@
 import { useProtectRoute } from '../utils/auth/useProtectRoute';
 import { Card, CardActionArea, CardContent, Typography } from '@mui/material';
 import { MainDiv } from '@/components/styled';
-import { usePeople } from '@/hooks/usePeople';
+import { usePeople } from '@/hooks';
 
-export default function Home() {
+export default function People() {
   useProtectRoute();
   const {isLoading, data } = usePeople()
 
