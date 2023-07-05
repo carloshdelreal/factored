@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { useRouter } from 'next/router';
 import { AuthContext } from '../../utils/AuthContext';
 import { UserType } from '../../types';
+import { routes } from '../routes';
 
 export const useProtectAdminRoute = (): boolean => {
   const {
@@ -12,7 +13,7 @@ export const useProtectAdminRoute = (): boolean => {
   const router = useRouter();
 
   if (!isLoggedIn && !loading && userData?.type !== UserType.ADMIN) {
-    router.push(`/log-in`);
+    router.push(routes.login);
   }
   return isLoggedIn && userData?.type === UserType.ADMIN;
 };

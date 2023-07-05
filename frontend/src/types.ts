@@ -31,6 +31,8 @@ export type User = {
 } & NewUser;
 
 export type LoginEmailFormFields = Pick<NewUser, 'email' | 'password'>;
+export type ResetPasswordFormFields = Pick<NewUser, 'email'>;
+export type UpdatePasswordFormFields = LoginEmailFormFields & { token: string }
 export type SignUpFormFields = Omit<NewUser, 'type' | 'pictureUrl'> & {
   passwordConfirmation: string;
 };
@@ -39,8 +41,10 @@ export type AllFormFields = LoginEmailFormFields;
 
 export type LoginEmailFormFieldNames = keyof LoginEmailFormFields;
 export type SignUpFormFieldNames = keyof SignUpFormFields;
+export type ResetPasswordFormFieldNames = keyof ResetPasswordFormFields;
+export type UpdatePasswordFormFieldNames = keyof UpdatePasswordFormFields
 
-export type AllFormFieldNames = LoginEmailFormFieldNames | SignUpFormFieldNames;
+export type AllFormFieldNames = LoginEmailFormFieldNames | SignUpFormFieldNames | UpdatePasswordFormFieldNames;
 
 export type Maybe<T> = T | null;
 

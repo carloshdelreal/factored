@@ -79,3 +79,21 @@ export const loginFailed = (detail?: string) => {
     type: NotificationType.Error,
   });
 };
+
+export const resetingPasswordSuccess = (detail?: string) => {
+  return notifySuccess({
+    id: uuidv4(),
+    title: `reseting password`,
+    detail: detail || `a token to reset your password was sent to your email`,
+    type: NotificationType.Success,
+  });
+};
+
+export const passwordResetted = (detail?: string) => {
+  return notifySuccess({
+    id: uuidv4(),
+    title: `reseting password`,
+    detail: detail || `your password has been successfully redefined`,
+    type: NotificationType.Success,
+  });
+};

@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { useRouter } from 'next/router';
 import { AuthContext } from '../../utils/AuthContext';
+import { routes } from '../routes';
 
 export const useProtectRoute = (): boolean => {
   const {
@@ -11,7 +12,7 @@ export const useProtectRoute = (): boolean => {
   const router = useRouter();
 
   if (!isLoggedIn && !loading) {
-    router.push(`/log-in`);
+    router.push(routes.login);
   }
   return isLoggedIn;
 };

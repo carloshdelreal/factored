@@ -25,17 +25,12 @@ export const useLoginMutation = () => {
           )}`,
         );
     },
-    
-    onError: (res) => {
-      console.log({res})
-    },
 
     successMsg: `Logged in successfully! Please hold...`,
   };
 
   const { isLoading, mutate } = useToastedMutation(login, {
     onSuccess: logInQueryOptions.onCompleted,
-    onError: logInQueryOptions.onError
   });
 
   return { isLoading, mutate, toastComponent };

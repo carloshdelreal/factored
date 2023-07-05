@@ -31,7 +31,7 @@ export default function LoginPage() {
 
       <Login />
 
-      <ForgotPassword variant="text">forgot password?</ForgotPassword>
+      <ForgotPassword onClick={() => router.push(routes.forgotPassword)} variant="text">forgot password?</ForgotPassword>
 
       <Container maxWidth="xs">
         <Separator />

@@ -1,11 +1,11 @@
 import styles from '@/styles/Home.module.css';
 import { PageHead } from '../components/head';
-import { SignUp } from '../components/signup';
 import { useIsAuthenticated } from '../utils/auth/useIsAuthenticated';
 import { useRouter } from 'next/router';
-import { Button, Container } from '@mui/material';
+import { Container, Button } from '@mui/material';
 import styled from '@emotion/styled';
-import { routes } from '../utils/routes';
+import { ResetPassword } from '@/components/ResetPassword';
+import { routes } from '@/utils/routes';
 
 const Separator = styled.div`
   align-items: center;
@@ -15,7 +15,7 @@ const Separator = styled.div`
   text-align: center;
 `;
 
-export default function SignUpPage() {
+export default function ResetPasswordPage() {
   const router = useRouter();
   const { loggedIn } = useIsAuthenticated();
 
@@ -24,7 +24,7 @@ export default function SignUpPage() {
     <div className={styles.container}>
       <PageHead />
 
-      <SignUp />
+      <ResetPassword />
 
       <Container maxWidth="xs">
         <Separator />
@@ -34,10 +34,11 @@ export default function SignUpPage() {
         variant="contained"
         color="secondary"
         type="submit"
-        onClick={() => router.push(routes.login)}
+        onClick={() => router.push(routes.forgotPassword)}
       >
-        Log In
+        Reset password again
       </Button>
+
     </div>
   );
 }

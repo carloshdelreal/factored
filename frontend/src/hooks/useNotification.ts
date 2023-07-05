@@ -6,6 +6,8 @@ import {
   accountActivationFailed,
   loginSuccess,
   loginFailed,
+  resetingPasswordSuccess,
+  passwordResetted,
 } from '../actions/notifications';
 import { useNotificationContext } from '../utils/NotificationContext';
 
@@ -40,6 +42,14 @@ export const useNotification = () => {
     dispatch(loginFailed(detail));
   };
 
+  const resetingPasswordSucc = (detail?: string) => {
+    dispatch(resetingPasswordSuccess(detail));
+  };
+
+  const passwordResettedSucc = (detail?: string) => {
+    dispatch(passwordResetted(detail));
+  };
+
   return {
     regFailed,
     regSucceed,
@@ -48,5 +58,7 @@ export const useNotification = () => {
     accActFailed,
     loginSucc,
     loginFail,
+    resetingPasswordSucc,
+    passwordResettedSucc
   };
 };
