@@ -2,14 +2,17 @@ import { useToast } from './useToast';
 import { signup } from '../services/api';
 import { useRouter } from 'next/router';
 import { routes } from '../utils/routes';
+import { useNotification } from './useNotification';
 
 export const useSignUpMutation = () => {
   const { toastComponent, useToastedMutation, burnToast } = useToast();
+  const { regSucceed } = useNotification();
   const router = useRouter();
   const signUpQueryOptions = {
     onCompleted: ({ data }) => {
       const { code, message } = data?.status;
       if (code == 200 && message) {
+        regSucceed()
         router.push(routes.login);
       } else
         burnToast(

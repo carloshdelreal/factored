@@ -3,10 +3,10 @@ import Head from 'next/head';
 export function PageHead() {
   return (
     <Head>
-      <title>Test Questions</title>
+      <title>Factored</title>
       <meta
-        name="description"
-        content="Testquestions is the app that helps you to easily create or use tests for any purpose"
+        name="Factored Technical tests"
+        content="this app was created for factored to show off technical expertise"
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>

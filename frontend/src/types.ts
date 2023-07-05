@@ -5,6 +5,18 @@ export enum UserType {
   VIEWER = `VIEWER`,
 }
 
+export enum NotificationType {
+  Warning = `warning`,
+  Error = `error`,
+  Success = `success`,
+  Info = `info`,
+}
+
+export enum ReportAction {
+  report = `report`,
+  close = `close`,
+}
+
 export type NewUser = {
   type: UserType;
   firstName: string;
@@ -31,3 +43,11 @@ export type SignUpFormFieldNames = keyof SignUpFormFields;
 export type AllFormFieldNames = LoginEmailFormFieldNames | SignUpFormFieldNames;
 
 export type Maybe<T> = T | null;
+
+export type Notification = {
+  id: string;
+  type: NotificationType;
+  title: string;
+  detail: string;
+};
+

@@ -58,6 +58,7 @@ export const useToastedMutation: UseToastedMutationHoc =
           makeToast(isFunction(successMsg) ? successMsg(data) : successMsg);
       },
       onError: (e) => {
+        console.log({e})
         const apiErrorMessage = errorMessage(e);
         let message = apiErrorMessage;
         if (errorMsg) {
