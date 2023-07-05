@@ -3,5 +3,8 @@ export const routes = {
   signup: `/sign-up`,
   resetPassword: '/reset-password',
   home: '/home',
-  forgotPassword: '/forgot-password'
+  forgotPassword: '/forgot-password',
+  planets: '/planets',
+  people: '/people',
+  films: '/films'
 };

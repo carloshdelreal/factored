@@ -11,7 +11,6 @@ const ErrorText = styled.span`
 `;
 
 export const FormError = ({ message }: IFormError) => {
-  console.log(message);
   if (!message) return null;
 
   return <ErrorText>{message}</ErrorText>;
