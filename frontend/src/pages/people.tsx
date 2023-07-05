@@ -1,11 +1,11 @@
 import { useProtectRoute } from '../utils/auth/useProtectRoute';
-import { useFilms } from '@/hooks/useFilms';
 import { Card, CardActionArea, CardContent, Typography } from '@mui/material';
 import { MainDiv } from '@/components/styled';
+import { usePeople } from '@/hooks/usePeople';
 
 export default function Home() {
   useProtectRoute();
-  const {isLoading, data } = useFilms()
+  const {isLoading, data } = usePeople()
 
   if (isLoading) return <div>Loading...</div>
 
@@ -16,13 +16,16 @@ export default function Home() {
                 <CardActionArea>
                 <CardContent>
                     <Typography gutterBottom variant="h6" component="div">
-                        {m.title}
+                        {m.name}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        Director: {m.director}
+                        gender: {m.gender}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        Producer: {m.producer}
+                        height: {m.height}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        birth year: {m.birth_year}
                     </Typography>
                 </CardContent>
                 </CardActionArea>
